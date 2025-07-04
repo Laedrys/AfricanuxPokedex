@@ -1,29 +1,1004 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    color: #222;
-    margin: 0;
-    padding: 20px;
+:root {
+  --type-NORMAL: #A8A878;
+  --type-FIRE: #F08030;
+  --type-WATER: #6890F0;
+  --type-ELECTRIC: #F8D030;
+  --type-GRASS: #78C850;
+  --type-ICE: #98D8D8;
+  --type-FIGHTING: #C03028;
+  --type-POISON: #A040A0;
+  --type-GROUND: #E0C068;
+  --type-FLYING: #A890F0;
+  --type-PSYCHIC: #F85888;
+  --type-BUG: #A8B820;
+  --type-ROCK: #B8A038;
+  --type-GHOST: #705898;
+  --type-DRAGON: #7038F8;
+  --type-DARK: #705848;
+  --type-STEEL: #B8B8D0;
+  --type-FAIRY: #EE99AC;
 }
-.container {
-    max-width: 600px;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
+
+
+.pokemon-card {
+    border-radius: 12px;
+    color: white;
+    padding: 12px;
+    margin: 12px 0;
 }
-input[type="text"] {
-    width: 70%;
-    padding: 10px;
-    font-size: 1em;
+.pokemon-card.single-type {
+    background-color: var(--type-GRASS);
 }
-button {
-    padding: 10px 15px;
-    font-size: 1em;
+
+.pokemon-card.bg-NORMAL {
+    background-color: var(--type-NORMAL);
 }
-.pokemon-info {
-    margin-top: 20px;
-    background: #e0f7fa;
-    padding: 15px;
-    border-radius: 6px;
+.pokemon-card.bg-NORMAL-FIRE {
+    background: linear-gradient(135deg, var(--type-NORMAL) 50%, var(--type-FIRE) 50%);
+}
+.pokemon-card.bg-NORMAL-WATER {
+    background: linear-gradient(135deg, var(--type-NORMAL) 50%, var(--type-WATER) 50%);
+}
+.pokemon-card.bg-NORMAL-ELECTRIC {
+    background: linear-gradient(135deg, var(--type-NORMAL) 50%, var(--type-ELECTRIC) 50%);
+}
+.pokemon-card.bg-NORMAL-GRASS {
+    background: linear-gradient(135deg, var(--type-NORMAL) 50%, var(--type-GRASS) 50%);
+}
+.pokemon-card.bg-NORMAL-ICE {
+    background: linear-gradient(135deg, var(--type-NORMAL) 50%, var(--type-ICE) 50%);
+}
+.pokemon-card.bg-NORMAL-FIGHTING {
+    background: linear-gradient(135deg, var(--type-NORMAL) 50%, var(--type-FIGHTING) 50%);
+}
+.pokemon-card.bg-NORMAL-POISON {
+    background: linear-gradient(135deg, var(--type-NORMAL) 50%, var(--type-POISON) 50%);
+}
+.pokemon-card.bg-NORMAL-GROUND {
+    background: linear-gradient(135deg, var(--type-NORMAL) 50%, var(--type-GROUND) 50%);
+}
+.pokemon-card.bg-NORMAL-FLYING {
+    background: linear-gradient(135deg, var(--type-NORMAL) 50%, var(--type-FLYING) 50%);
+}
+.pokemon-card.bg-NORMAL-PSYCHIC {
+    background: linear-gradient(135deg, var(--type-NORMAL) 50%, var(--type-PSYCHIC) 50%);
+}
+.pokemon-card.bg-NORMAL-BUG {
+    background: linear-gradient(135deg, var(--type-NORMAL) 50%, var(--type-BUG) 50%);
+}
+.pokemon-card.bg-NORMAL-ROCK {
+    background: linear-gradient(135deg, var(--type-NORMAL) 50%, var(--type-ROCK) 50%);
+}
+.pokemon-card.bg-NORMAL-GHOST {
+    background: linear-gradient(135deg, var(--type-NORMAL) 50%, var(--type-GHOST) 50%);
+}
+.pokemon-card.bg-NORMAL-DRAGON {
+    background: linear-gradient(135deg, var(--type-NORMAL) 50%, var(--type-DRAGON) 50%);
+}
+.pokemon-card.bg-NORMAL-DARK {
+    background: linear-gradient(135deg, var(--type-NORMAL) 50%, var(--type-DARK) 50%);
+}
+.pokemon-card.bg-NORMAL-STEEL {
+    background: linear-gradient(135deg, var(--type-NORMAL) 50%, var(--type-STEEL) 50%);
+}
+.pokemon-card.bg-NORMAL-FAIRY {
+    background: linear-gradient(135deg, var(--type-NORMAL) 50%, var(--type-FAIRY) 50%);
+}
+.pokemon-card.bg-FIRE {
+    background-color: var(--type-FIRE);
+}
+.pokemon-card.bg-FIRE-NORMAL {
+    background: linear-gradient(135deg, var(--type-FIRE) 50%, var(--type-NORMAL) 50%);
+}
+.pokemon-card.bg-FIRE-WATER {
+    background: linear-gradient(135deg, var(--type-FIRE) 50%, var(--type-WATER) 50%);
+}
+.pokemon-card.bg-FIRE-ELECTRIC {
+    background: linear-gradient(135deg, var(--type-FIRE) 50%, var(--type-ELECTRIC) 50%);
+}
+.pokemon-card.bg-FIRE-GRASS {
+    background: linear-gradient(135deg, var(--type-FIRE) 50%, var(--type-GRASS) 50%);
+}
+.pokemon-card.bg-FIRE-ICE {
+    background: linear-gradient(135deg, var(--type-FIRE) 50%, var(--type-ICE) 50%);
+}
+.pokemon-card.bg-FIRE-FIGHTING {
+    background: linear-gradient(135deg, var(--type-FIRE) 50%, var(--type-FIGHTING) 50%);
+}
+.pokemon-card.bg-FIRE-POISON {
+    background: linear-gradient(135deg, var(--type-FIRE) 50%, var(--type-POISON) 50%);
+}
+.pokemon-card.bg-FIRE-GROUND {
+    background: linear-gradient(135deg, var(--type-FIRE) 50%, var(--type-GROUND) 50%);
+}
+.pokemon-card.bg-FIRE-FLYING {
+    background: linear-gradient(135deg, var(--type-FIRE) 50%, var(--type-FLYING) 50%);
+}
+.pokemon-card.bg-FIRE-PSYCHIC {
+    background: linear-gradient(135deg, var(--type-FIRE) 50%, var(--type-PSYCHIC) 50%);
+}
+.pokemon-card.bg-FIRE-BUG {
+    background: linear-gradient(135deg, var(--type-FIRE) 50%, var(--type-BUG) 50%);
+}
+.pokemon-card.bg-FIRE-ROCK {
+    background: linear-gradient(135deg, var(--type-FIRE) 50%, var(--type-ROCK) 50%);
+}
+.pokemon-card.bg-FIRE-GHOST {
+    background: linear-gradient(135deg, var(--type-FIRE) 50%, var(--type-GHOST) 50%);
+}
+.pokemon-card.bg-FIRE-DRAGON {
+    background: linear-gradient(135deg, var(--type-FIRE) 50%, var(--type-DRAGON) 50%);
+}
+.pokemon-card.bg-FIRE-DARK {
+    background: linear-gradient(135deg, var(--type-FIRE) 50%, var(--type-DARK) 50%);
+}
+.pokemon-card.bg-FIRE-STEEL {
+    background: linear-gradient(135deg, var(--type-FIRE) 50%, var(--type-STEEL) 50%);
+}
+.pokemon-card.bg-FIRE-FAIRY {
+    background: linear-gradient(135deg, var(--type-FIRE) 50%, var(--type-FAIRY) 50%);
+}
+.pokemon-card.bg-WATER {
+    background-color: var(--type-WATER);
+}
+.pokemon-card.bg-WATER-NORMAL {
+    background: linear-gradient(135deg, var(--type-WATER) 50%, var(--type-NORMAL) 50%);
+}
+.pokemon-card.bg-WATER-FIRE {
+    background: linear-gradient(135deg, var(--type-WATER) 50%, var(--type-FIRE) 50%);
+}
+.pokemon-card.bg-WATER-ELECTRIC {
+    background: linear-gradient(135deg, var(--type-WATER) 50%, var(--type-ELECTRIC) 50%);
+}
+.pokemon-card.bg-WATER-GRASS {
+    background: linear-gradient(135deg, var(--type-WATER) 50%, var(--type-GRASS) 50%);
+}
+.pokemon-card.bg-WATER-ICE {
+    background: linear-gradient(135deg, var(--type-WATER) 50%, var(--type-ICE) 50%);
+}
+.pokemon-card.bg-WATER-FIGHTING {
+    background: linear-gradient(135deg, var(--type-WATER) 50%, var(--type-FIGHTING) 50%);
+}
+.pokemon-card.bg-WATER-POISON {
+    background: linear-gradient(135deg, var(--type-WATER) 50%, var(--type-POISON) 50%);
+}
+.pokemon-card.bg-WATER-GROUND {
+    background: linear-gradient(135deg, var(--type-WATER) 50%, var(--type-GROUND) 50%);
+}
+.pokemon-card.bg-WATER-FLYING {
+    background: linear-gradient(135deg, var(--type-WATER) 50%, var(--type-FLYING) 50%);
+}
+.pokemon-card.bg-WATER-PSYCHIC {
+    background: linear-gradient(135deg, var(--type-WATER) 50%, var(--type-PSYCHIC) 50%);
+}
+.pokemon-card.bg-WATER-BUG {
+    background: linear-gradient(135deg, var(--type-WATER) 50%, var(--type-BUG) 50%);
+}
+.pokemon-card.bg-WATER-ROCK {
+    background: linear-gradient(135deg, var(--type-WATER) 50%, var(--type-ROCK) 50%);
+}
+.pokemon-card.bg-WATER-GHOST {
+    background: linear-gradient(135deg, var(--type-WATER) 50%, var(--type-GHOST) 50%);
+}
+.pokemon-card.bg-WATER-DRAGON {
+    background: linear-gradient(135deg, var(--type-WATER) 50%, var(--type-DRAGON) 50%);
+}
+.pokemon-card.bg-WATER-DARK {
+    background: linear-gradient(135deg, var(--type-WATER) 50%, var(--type-DARK) 50%);
+}
+.pokemon-card.bg-WATER-STEEL {
+    background: linear-gradient(135deg, var(--type-WATER) 50%, var(--type-STEEL) 50%);
+}
+.pokemon-card.bg-WATER-FAIRY {
+    background: linear-gradient(135deg, var(--type-WATER) 50%, var(--type-FAIRY) 50%);
+}
+.pokemon-card.bg-ELECTRIC {
+    background-color: var(--type-ELECTRIC);
+}
+.pokemon-card.bg-ELECTRIC-NORMAL {
+    background: linear-gradient(135deg, var(--type-ELECTRIC) 50%, var(--type-NORMAL) 50%);
+}
+.pokemon-card.bg-ELECTRIC-FIRE {
+    background: linear-gradient(135deg, var(--type-ELECTRIC) 50%, var(--type-FIRE) 50%);
+}
+.pokemon-card.bg-ELECTRIC-WATER {
+    background: linear-gradient(135deg, var(--type-ELECTRIC) 50%, var(--type-WATER) 50%);
+}
+.pokemon-card.bg-ELECTRIC-GRASS {
+    background: linear-gradient(135deg, var(--type-ELECTRIC) 50%, var(--type-GRASS) 50%);
+}
+.pokemon-card.bg-ELECTRIC-ICE {
+    background: linear-gradient(135deg, var(--type-ELECTRIC) 50%, var(--type-ICE) 50%);
+}
+.pokemon-card.bg-ELECTRIC-FIGHTING {
+    background: linear-gradient(135deg, var(--type-ELECTRIC) 50%, var(--type-FIGHTING) 50%);
+}
+.pokemon-card.bg-ELECTRIC-POISON {
+    background: linear-gradient(135deg, var(--type-ELECTRIC) 50%, var(--type-POISON) 50%);
+}
+.pokemon-card.bg-ELECTRIC-GROUND {
+    background: linear-gradient(135deg, var(--type-ELECTRIC) 50%, var(--type-GROUND) 50%);
+}
+.pokemon-card.bg-ELECTRIC-FLYING {
+    background: linear-gradient(135deg, var(--type-ELECTRIC) 50%, var(--type-FLYING) 50%);
+}
+.pokemon-card.bg-ELECTRIC-PSYCHIC {
+    background: linear-gradient(135deg, var(--type-ELECTRIC) 50%, var(--type-PSYCHIC) 50%);
+}
+.pokemon-card.bg-ELECTRIC-BUG {
+    background: linear-gradient(135deg, var(--type-ELECTRIC) 50%, var(--type-BUG) 50%);
+}
+.pokemon-card.bg-ELECTRIC-ROCK {
+    background: linear-gradient(135deg, var(--type-ELECTRIC) 50%, var(--type-ROCK) 50%);
+}
+.pokemon-card.bg-ELECTRIC-GHOST {
+    background: linear-gradient(135deg, var(--type-ELECTRIC) 50%, var(--type-GHOST) 50%);
+}
+.pokemon-card.bg-ELECTRIC-DRAGON {
+    background: linear-gradient(135deg, var(--type-ELECTRIC) 50%, var(--type-DRAGON) 50%);
+}
+.pokemon-card.bg-ELECTRIC-DARK {
+    background: linear-gradient(135deg, var(--type-ELECTRIC) 50%, var(--type-DARK) 50%);
+}
+.pokemon-card.bg-ELECTRIC-STEEL {
+    background: linear-gradient(135deg, var(--type-ELECTRIC) 50%, var(--type-STEEL) 50%);
+}
+.pokemon-card.bg-ELECTRIC-FAIRY {
+    background: linear-gradient(135deg, var(--type-ELECTRIC) 50%, var(--type-FAIRY) 50%);
+}
+.pokemon-card.bg-GRASS {
+    background-color: var(--type-GRASS);
+}
+.pokemon-card.bg-GRASS-NORMAL {
+    background: linear-gradient(135deg, var(--type-GRASS) 50%, var(--type-NORMAL) 50%);
+}
+.pokemon-card.bg-GRASS-FIRE {
+    background: linear-gradient(135deg, var(--type-GRASS) 50%, var(--type-FIRE) 50%);
+}
+.pokemon-card.bg-GRASS-WATER {
+    background: linear-gradient(135deg, var(--type-GRASS) 50%, var(--type-WATER) 50%);
+}
+.pokemon-card.bg-GRASS-ELECTRIC {
+    background: linear-gradient(135deg, var(--type-GRASS) 50%, var(--type-ELECTRIC) 50%);
+}
+.pokemon-card.bg-GRASS-ICE {
+    background: linear-gradient(135deg, var(--type-GRASS) 50%, var(--type-ICE) 50%);
+}
+.pokemon-card.bg-GRASS-FIGHTING {
+    background: linear-gradient(135deg, var(--type-GRASS) 50%, var(--type-FIGHTING) 50%);
+}
+.pokemon-card.bg-GRASS-POISON {
+    background: linear-gradient(135deg, var(--type-GRASS) 50%, var(--type-POISON) 50%);
+}
+.pokemon-card.bg-GRASS-GROUND {
+    background: linear-gradient(135deg, var(--type-GRASS) 50%, var(--type-GROUND) 50%);
+}
+.pokemon-card.bg-GRASS-FLYING {
+    background: linear-gradient(135deg, var(--type-GRASS) 50%, var(--type-FLYING) 50%);
+}
+.pokemon-card.bg-GRASS-PSYCHIC {
+    background: linear-gradient(135deg, var(--type-GRASS) 50%, var(--type-PSYCHIC) 50%);
+}
+.pokemon-card.bg-GRASS-BUG {
+    background: linear-gradient(135deg, var(--type-GRASS) 50%, var(--type-BUG) 50%);
+}
+.pokemon-card.bg-GRASS-ROCK {
+    background: linear-gradient(135deg, var(--type-GRASS) 50%, var(--type-ROCK) 50%);
+}
+.pokemon-card.bg-GRASS-GHOST {
+    background: linear-gradient(135deg, var(--type-GRASS) 50%, var(--type-GHOST) 50%);
+}
+.pokemon-card.bg-GRASS-DRAGON {
+    background: linear-gradient(135deg, var(--type-GRASS) 50%, var(--type-DRAGON) 50%);
+}
+.pokemon-card.bg-GRASS-DARK {
+    background: linear-gradient(135deg, var(--type-GRASS) 50%, var(--type-DARK) 50%);
+}
+.pokemon-card.bg-GRASS-STEEL {
+    background: linear-gradient(135deg, var(--type-GRASS) 50%, var(--type-STEEL) 50%);
+}
+.pokemon-card.bg-GRASS-FAIRY {
+    background: linear-gradient(135deg, var(--type-GRASS) 50%, var(--type-FAIRY) 50%);
+}
+.pokemon-card.bg-ICE {
+    background-color: var(--type-ICE);
+}
+.pokemon-card.bg-ICE-NORMAL {
+    background: linear-gradient(135deg, var(--type-ICE) 50%, var(--type-NORMAL) 50%);
+}
+.pokemon-card.bg-ICE-FIRE {
+    background: linear-gradient(135deg, var(--type-ICE) 50%, var(--type-FIRE) 50%);
+}
+.pokemon-card.bg-ICE-WATER {
+    background: linear-gradient(135deg, var(--type-ICE) 50%, var(--type-WATER) 50%);
+}
+.pokemon-card.bg-ICE-ELECTRIC {
+    background: linear-gradient(135deg, var(--type-ICE) 50%, var(--type-ELECTRIC) 50%);
+}
+.pokemon-card.bg-ICE-GRASS {
+    background: linear-gradient(135deg, var(--type-ICE) 50%, var(--type-GRASS) 50%);
+}
+.pokemon-card.bg-ICE-FIGHTING {
+    background: linear-gradient(135deg, var(--type-ICE) 50%, var(--type-FIGHTING) 50%);
+}
+.pokemon-card.bg-ICE-POISON {
+    background: linear-gradient(135deg, var(--type-ICE) 50%, var(--type-POISON) 50%);
+}
+.pokemon-card.bg-ICE-GROUND {
+    background: linear-gradient(135deg, var(--type-ICE) 50%, var(--type-GROUND) 50%);
+}
+.pokemon-card.bg-ICE-FLYING {
+    background: linear-gradient(135deg, var(--type-ICE) 50%, var(--type-FLYING) 50%);
+}
+.pokemon-card.bg-ICE-PSYCHIC {
+    background: linear-gradient(135deg, var(--type-ICE) 50%, var(--type-PSYCHIC) 50%);
+}
+.pokemon-card.bg-ICE-BUG {
+    background: linear-gradient(135deg, var(--type-ICE) 50%, var(--type-BUG) 50%);
+}
+.pokemon-card.bg-ICE-ROCK {
+    background: linear-gradient(135deg, var(--type-ICE) 50%, var(--type-ROCK) 50%);
+}
+.pokemon-card.bg-ICE-GHOST {
+    background: linear-gradient(135deg, var(--type-ICE) 50%, var(--type-GHOST) 50%);
+}
+.pokemon-card.bg-ICE-DRAGON {
+    background: linear-gradient(135deg, var(--type-ICE) 50%, var(--type-DRAGON) 50%);
+}
+.pokemon-card.bg-ICE-DARK {
+    background: linear-gradient(135deg, var(--type-ICE) 50%, var(--type-DARK) 50%);
+}
+.pokemon-card.bg-ICE-STEEL {
+    background: linear-gradient(135deg, var(--type-ICE) 50%, var(--type-STEEL) 50%);
+}
+.pokemon-card.bg-ICE-FAIRY {
+    background: linear-gradient(135deg, var(--type-ICE) 50%, var(--type-FAIRY) 50%);
+}
+.pokemon-card.bg-FIGHTING {
+    background-color: var(--type-FIGHTING);
+}
+.pokemon-card.bg-FIGHTING-NORMAL {
+    background: linear-gradient(135deg, var(--type-FIGHTING) 50%, var(--type-NORMAL) 50%);
+}
+.pokemon-card.bg-FIGHTING-FIRE {
+    background: linear-gradient(135deg, var(--type-FIGHTING) 50%, var(--type-FIRE) 50%);
+}
+.pokemon-card.bg-FIGHTING-WATER {
+    background: linear-gradient(135deg, var(--type-FIGHTING) 50%, var(--type-WATER) 50%);
+}
+.pokemon-card.bg-FIGHTING-ELECTRIC {
+    background: linear-gradient(135deg, var(--type-FIGHTING) 50%, var(--type-ELECTRIC) 50%);
+}
+.pokemon-card.bg-FIGHTING-GRASS {
+    background: linear-gradient(135deg, var(--type-FIGHTING) 50%, var(--type-GRASS) 50%);
+}
+.pokemon-card.bg-FIGHTING-ICE {
+    background: linear-gradient(135deg, var(--type-FIGHTING) 50%, var(--type-ICE) 50%);
+}
+.pokemon-card.bg-FIGHTING-POISON {
+    background: linear-gradient(135deg, var(--type-FIGHTING) 50%, var(--type-POISON) 50%);
+}
+.pokemon-card.bg-FIGHTING-GROUND {
+    background: linear-gradient(135deg, var(--type-FIGHTING) 50%, var(--type-GROUND) 50%);
+}
+.pokemon-card.bg-FIGHTING-FLYING {
+    background: linear-gradient(135deg, var(--type-FIGHTING) 50%, var(--type-FLYING) 50%);
+}
+.pokemon-card.bg-FIGHTING-PSYCHIC {
+    background: linear-gradient(135deg, var(--type-FIGHTING) 50%, var(--type-PSYCHIC) 50%);
+}
+.pokemon-card.bg-FIGHTING-BUG {
+    background: linear-gradient(135deg, var(--type-FIGHTING) 50%, var(--type-BUG) 50%);
+}
+.pokemon-card.bg-FIGHTING-ROCK {
+    background: linear-gradient(135deg, var(--type-FIGHTING) 50%, var(--type-ROCK) 50%);
+}
+.pokemon-card.bg-FIGHTING-GHOST {
+    background: linear-gradient(135deg, var(--type-FIGHTING) 50%, var(--type-GHOST) 50%);
+}
+.pokemon-card.bg-FIGHTING-DRAGON {
+    background: linear-gradient(135deg, var(--type-FIGHTING) 50%, var(--type-DRAGON) 50%);
+}
+.pokemon-card.bg-FIGHTING-DARK {
+    background: linear-gradient(135deg, var(--type-FIGHTING) 50%, var(--type-DARK) 50%);
+}
+.pokemon-card.bg-FIGHTING-STEEL {
+    background: linear-gradient(135deg, var(--type-FIGHTING) 50%, var(--type-STEEL) 50%);
+}
+.pokemon-card.bg-FIGHTING-FAIRY {
+    background: linear-gradient(135deg, var(--type-FIGHTING) 50%, var(--type-FAIRY) 50%);
+}
+.pokemon-card.bg-POISON {
+    background-color: var(--type-POISON);
+}
+.pokemon-card.bg-POISON-NORMAL {
+    background: linear-gradient(135deg, var(--type-POISON) 50%, var(--type-NORMAL) 50%);
+}
+.pokemon-card.bg-POISON-FIRE {
+    background: linear-gradient(135deg, var(--type-POISON) 50%, var(--type-FIRE) 50%);
+}
+.pokemon-card.bg-POISON-WATER {
+    background: linear-gradient(135deg, var(--type-POISON) 50%, var(--type-WATER) 50%);
+}
+.pokemon-card.bg-POISON-ELECTRIC {
+    background: linear-gradient(135deg, var(--type-POISON) 50%, var(--type-ELECTRIC) 50%);
+}
+.pokemon-card.bg-POISON-GRASS {
+    background: linear-gradient(135deg, var(--type-POISON) 50%, var(--type-GRASS) 50%);
+}
+.pokemon-card.bg-POISON-ICE {
+    background: linear-gradient(135deg, var(--type-POISON) 50%, var(--type-ICE) 50%);
+}
+.pokemon-card.bg-POISON-FIGHTING {
+    background: linear-gradient(135deg, var(--type-POISON) 50%, var(--type-FIGHTING) 50%);
+}
+.pokemon-card.bg-POISON-GROUND {
+    background: linear-gradient(135deg, var(--type-POISON) 50%, var(--type-GROUND) 50%);
+}
+.pokemon-card.bg-POISON-FLYING {
+    background: linear-gradient(135deg, var(--type-POISON) 50%, var(--type-FLYING) 50%);
+}
+.pokemon-card.bg-POISON-PSYCHIC {
+    background: linear-gradient(135deg, var(--type-POISON) 50%, var(--type-PSYCHIC) 50%);
+}
+.pokemon-card.bg-POISON-BUG {
+    background: linear-gradient(135deg, var(--type-POISON) 50%, var(--type-BUG) 50%);
+}
+.pokemon-card.bg-POISON-ROCK {
+    background: linear-gradient(135deg, var(--type-POISON) 50%, var(--type-ROCK) 50%);
+}
+.pokemon-card.bg-POISON-GHOST {
+    background: linear-gradient(135deg, var(--type-POISON) 50%, var(--type-GHOST) 50%);
+}
+.pokemon-card.bg-POISON-DRAGON {
+    background: linear-gradient(135deg, var(--type-POISON) 50%, var(--type-DRAGON) 50%);
+}
+.pokemon-card.bg-POISON-DARK {
+    background: linear-gradient(135deg, var(--type-POISON) 50%, var(--type-DARK) 50%);
+}
+.pokemon-card.bg-POISON-STEEL {
+    background: linear-gradient(135deg, var(--type-POISON) 50%, var(--type-STEEL) 50%);
+}
+.pokemon-card.bg-POISON-FAIRY {
+    background: linear-gradient(135deg, var(--type-POISON) 50%, var(--type-FAIRY) 50%);
+}
+.pokemon-card.bg-GROUND {
+    background-color: var(--type-GROUND);
+}
+.pokemon-card.bg-GROUND-NORMAL {
+    background: linear-gradient(135deg, var(--type-GROUND) 50%, var(--type-NORMAL) 50%);
+}
+.pokemon-card.bg-GROUND-FIRE {
+    background: linear-gradient(135deg, var(--type-GROUND) 50%, var(--type-FIRE) 50%);
+}
+.pokemon-card.bg-GROUND-WATER {
+    background: linear-gradient(135deg, var(--type-GROUND) 50%, var(--type-WATER) 50%);
+}
+.pokemon-card.bg-GROUND-ELECTRIC {
+    background: linear-gradient(135deg, var(--type-GROUND) 50%, var(--type-ELECTRIC) 50%);
+}
+.pokemon-card.bg-GROUND-GRASS {
+    background: linear-gradient(135deg, var(--type-GROUND) 50%, var(--type-GRASS) 50%);
+}
+.pokemon-card.bg-GROUND-ICE {
+    background: linear-gradient(135deg, var(--type-GROUND) 50%, var(--type-ICE) 50%);
+}
+.pokemon-card.bg-GROUND-FIGHTING {
+    background: linear-gradient(135deg, var(--type-GROUND) 50%, var(--type-FIGHTING) 50%);
+}
+.pokemon-card.bg-GROUND-POISON {
+    background: linear-gradient(135deg, var(--type-GROUND) 50%, var(--type-POISON) 50%);
+}
+.pokemon-card.bg-GROUND-FLYING {
+    background: linear-gradient(135deg, var(--type-GROUND) 50%, var(--type-FLYING) 50%);
+}
+.pokemon-card.bg-GROUND-PSYCHIC {
+    background: linear-gradient(135deg, var(--type-GROUND) 50%, var(--type-PSYCHIC) 50%);
+}
+.pokemon-card.bg-GROUND-BUG {
+    background: linear-gradient(135deg, var(--type-GROUND) 50%, var(--type-BUG) 50%);
+}
+.pokemon-card.bg-GROUND-ROCK {
+    background: linear-gradient(135deg, var(--type-GROUND) 50%, var(--type-ROCK) 50%);
+}
+.pokemon-card.bg-GROUND-GHOST {
+    background: linear-gradient(135deg, var(--type-GROUND) 50%, var(--type-GHOST) 50%);
+}
+.pokemon-card.bg-GROUND-DRAGON {
+    background: linear-gradient(135deg, var(--type-GROUND) 50%, var(--type-DRAGON) 50%);
+}
+.pokemon-card.bg-GROUND-DARK {
+    background: linear-gradient(135deg, var(--type-GROUND) 50%, var(--type-DARK) 50%);
+}
+.pokemon-card.bg-GROUND-STEEL {
+    background: linear-gradient(135deg, var(--type-GROUND) 50%, var(--type-STEEL) 50%);
+}
+.pokemon-card.bg-GROUND-FAIRY {
+    background: linear-gradient(135deg, var(--type-GROUND) 50%, var(--type-FAIRY) 50%);
+}
+.pokemon-card.bg-FLYING {
+    background-color: var(--type-FLYING);
+}
+.pokemon-card.bg-FLYING-NORMAL {
+    background: linear-gradient(135deg, var(--type-FLYING) 50%, var(--type-NORMAL) 50%);
+}
+.pokemon-card.bg-FLYING-FIRE {
+    background: linear-gradient(135deg, var(--type-FLYING) 50%, var(--type-FIRE) 50%);
+}
+.pokemon-card.bg-FLYING-WATER {
+    background: linear-gradient(135deg, var(--type-FLYING) 50%, var(--type-WATER) 50%);
+}
+.pokemon-card.bg-FLYING-ELECTRIC {
+    background: linear-gradient(135deg, var(--type-FLYING) 50%, var(--type-ELECTRIC) 50%);
+}
+.pokemon-card.bg-FLYING-GRASS {
+    background: linear-gradient(135deg, var(--type-FLYING) 50%, var(--type-GRASS) 50%);
+}
+.pokemon-card.bg-FLYING-ICE {
+    background: linear-gradient(135deg, var(--type-FLYING) 50%, var(--type-ICE) 50%);
+}
+.pokemon-card.bg-FLYING-FIGHTING {
+    background: linear-gradient(135deg, var(--type-FLYING) 50%, var(--type-FIGHTING) 50%);
+}
+.pokemon-card.bg-FLYING-POISON {
+    background: linear-gradient(135deg, var(--type-FLYING) 50%, var(--type-POISON) 50%);
+}
+.pokemon-card.bg-FLYING-GROUND {
+    background: linear-gradient(135deg, var(--type-FLYING) 50%, var(--type-GROUND) 50%);
+}
+.pokemon-card.bg-FLYING-PSYCHIC {
+    background: linear-gradient(135deg, var(--type-FLYING) 50%, var(--type-PSYCHIC) 50%);
+}
+.pokemon-card.bg-FLYING-BUG {
+    background: linear-gradient(135deg, var(--type-FLYING) 50%, var(--type-BUG) 50%);
+}
+.pokemon-card.bg-FLYING-ROCK {
+    background: linear-gradient(135deg, var(--type-FLYING) 50%, var(--type-ROCK) 50%);
+}
+.pokemon-card.bg-FLYING-GHOST {
+    background: linear-gradient(135deg, var(--type-FLYING) 50%, var(--type-GHOST) 50%);
+}
+.pokemon-card.bg-FLYING-DRAGON {
+    background: linear-gradient(135deg, var(--type-FLYING) 50%, var(--type-DRAGON) 50%);
+}
+.pokemon-card.bg-FLYING-DARK {
+    background: linear-gradient(135deg, var(--type-FLYING) 50%, var(--type-DARK) 50%);
+}
+.pokemon-card.bg-FLYING-STEEL {
+    background: linear-gradient(135deg, var(--type-FLYING) 50%, var(--type-STEEL) 50%);
+}
+.pokemon-card.bg-FLYING-FAIRY {
+    background: linear-gradient(135deg, var(--type-FLYING) 50%, var(--type-FAIRY) 50%);
+}
+.pokemon-card.bg-PSYCHIC {
+    background-color: var(--type-PSYCHIC);
+}
+.pokemon-card.bg-PSYCHIC-NORMAL {
+    background: linear-gradient(135deg, var(--type-PSYCHIC) 50%, var(--type-NORMAL) 50%);
+}
+.pokemon-card.bg-PSYCHIC-FIRE {
+    background: linear-gradient(135deg, var(--type-PSYCHIC) 50%, var(--type-FIRE) 50%);
+}
+.pokemon-card.bg-PSYCHIC-WATER {
+    background: linear-gradient(135deg, var(--type-PSYCHIC) 50%, var(--type-WATER) 50%);
+}
+.pokemon-card.bg-PSYCHIC-ELECTRIC {
+    background: linear-gradient(135deg, var(--type-PSYCHIC) 50%, var(--type-ELECTRIC) 50%);
+}
+.pokemon-card.bg-PSYCHIC-GRASS {
+    background: linear-gradient(135deg, var(--type-PSYCHIC) 50%, var(--type-GRASS) 50%);
+}
+.pokemon-card.bg-PSYCHIC-ICE {
+    background: linear-gradient(135deg, var(--type-PSYCHIC) 50%, var(--type-ICE) 50%);
+}
+.pokemon-card.bg-PSYCHIC-FIGHTING {
+    background: linear-gradient(135deg, var(--type-PSYCHIC) 50%, var(--type-FIGHTING) 50%);
+}
+.pokemon-card.bg-PSYCHIC-POISON {
+    background: linear-gradient(135deg, var(--type-PSYCHIC) 50%, var(--type-POISON) 50%);
+}
+.pokemon-card.bg-PSYCHIC-GROUND {
+    background: linear-gradient(135deg, var(--type-PSYCHIC) 50%, var(--type-GROUND) 50%);
+}
+.pokemon-card.bg-PSYCHIC-FLYING {
+    background: linear-gradient(135deg, var(--type-PSYCHIC) 50%, var(--type-FLYING) 50%);
+}
+.pokemon-card.bg-PSYCHIC-BUG {
+    background: linear-gradient(135deg, var(--type-PSYCHIC) 50%, var(--type-BUG) 50%);
+}
+.pokemon-card.bg-PSYCHIC-ROCK {
+    background: linear-gradient(135deg, var(--type-PSYCHIC) 50%, var(--type-ROCK) 50%);
+}
+.pokemon-card.bg-PSYCHIC-GHOST {
+    background: linear-gradient(135deg, var(--type-PSYCHIC) 50%, var(--type-GHOST) 50%);
+}
+.pokemon-card.bg-PSYCHIC-DRAGON {
+    background: linear-gradient(135deg, var(--type-PSYCHIC) 50%, var(--type-DRAGON) 50%);
+}
+.pokemon-card.bg-PSYCHIC-DARK {
+    background: linear-gradient(135deg, var(--type-PSYCHIC) 50%, var(--type-DARK) 50%);
+}
+.pokemon-card.bg-PSYCHIC-STEEL {
+    background: linear-gradient(135deg, var(--type-PSYCHIC) 50%, var(--type-STEEL) 50%);
+}
+.pokemon-card.bg-PSYCHIC-FAIRY {
+    background: linear-gradient(135deg, var(--type-PSYCHIC) 50%, var(--type-FAIRY) 50%);
+}
+.pokemon-card.bg-BUG {
+    background-color: var(--type-BUG);
+}
+.pokemon-card.bg-BUG-NORMAL {
+    background: linear-gradient(135deg, var(--type-BUG) 50%, var(--type-NORMAL) 50%);
+}
+.pokemon-card.bg-BUG-FIRE {
+    background: linear-gradient(135deg, var(--type-BUG) 50%, var(--type-FIRE) 50%);
+}
+.pokemon-card.bg-BUG-WATER {
+    background: linear-gradient(135deg, var(--type-BUG) 50%, var(--type-WATER) 50%);
+}
+.pokemon-card.bg-BUG-ELECTRIC {
+    background: linear-gradient(135deg, var(--type-BUG) 50%, var(--type-ELECTRIC) 50%);
+}
+.pokemon-card.bg-BUG-GRASS {
+    background: linear-gradient(135deg, var(--type-BUG) 50%, var(--type-GRASS) 50%);
+}
+.pokemon-card.bg-BUG-ICE {
+    background: linear-gradient(135deg, var(--type-BUG) 50%, var(--type-ICE) 50%);
+}
+.pokemon-card.bg-BUG-FIGHTING {
+    background: linear-gradient(135deg, var(--type-BUG) 50%, var(--type-FIGHTING) 50%);
+}
+.pokemon-card.bg-BUG-POISON {
+    background: linear-gradient(135deg, var(--type-BUG) 50%, var(--type-POISON) 50%);
+}
+.pokemon-card.bg-BUG-GROUND {
+    background: linear-gradient(135deg, var(--type-BUG) 50%, var(--type-GROUND) 50%);
+}
+.pokemon-card.bg-BUG-FLYING {
+    background: linear-gradient(135deg, var(--type-BUG) 50%, var(--type-FLYING) 50%);
+}
+.pokemon-card.bg-BUG-PSYCHIC {
+    background: linear-gradient(135deg, var(--type-BUG) 50%, var(--type-PSYCHIC) 50%);
+}
+.pokemon-card.bg-BUG-ROCK {
+    background: linear-gradient(135deg, var(--type-BUG) 50%, var(--type-ROCK) 50%);
+}
+.pokemon-card.bg-BUG-GHOST {
+    background: linear-gradient(135deg, var(--type-BUG) 50%, var(--type-GHOST) 50%);
+}
+.pokemon-card.bg-BUG-DRAGON {
+    background: linear-gradient(135deg, var(--type-BUG) 50%, var(--type-DRAGON) 50%);
+}
+.pokemon-card.bg-BUG-DARK {
+    background: linear-gradient(135deg, var(--type-BUG) 50%, var(--type-DARK) 50%);
+}
+.pokemon-card.bg-BUG-STEEL {
+    background: linear-gradient(135deg, var(--type-BUG) 50%, var(--type-STEEL) 50%);
+}
+.pokemon-card.bg-BUG-FAIRY {
+    background: linear-gradient(135deg, var(--type-BUG) 50%, var(--type-FAIRY) 50%);
+}
+.pokemon-card.bg-ROCK {
+    background-color: var(--type-ROCK);
+}
+.pokemon-card.bg-ROCK-NORMAL {
+    background: linear-gradient(135deg, var(--type-ROCK) 50%, var(--type-NORMAL) 50%);
+}
+.pokemon-card.bg-ROCK-FIRE {
+    background: linear-gradient(135deg, var(--type-ROCK) 50%, var(--type-FIRE) 50%);
+}
+.pokemon-card.bg-ROCK-WATER {
+    background: linear-gradient(135deg, var(--type-ROCK) 50%, var(--type-WATER) 50%);
+}
+.pokemon-card.bg-ROCK-ELECTRIC {
+    background: linear-gradient(135deg, var(--type-ROCK) 50%, var(--type-ELECTRIC) 50%);
+}
+.pokemon-card.bg-ROCK-GRASS {
+    background: linear-gradient(135deg, var(--type-ROCK) 50%, var(--type-GRASS) 50%);
+}
+.pokemon-card.bg-ROCK-ICE {
+    background: linear-gradient(135deg, var(--type-ROCK) 50%, var(--type-ICE) 50%);
+}
+.pokemon-card.bg-ROCK-FIGHTING {
+    background: linear-gradient(135deg, var(--type-ROCK) 50%, var(--type-FIGHTING) 50%);
+}
+.pokemon-card.bg-ROCK-POISON {
+    background: linear-gradient(135deg, var(--type-ROCK) 50%, var(--type-POISON) 50%);
+}
+.pokemon-card.bg-ROCK-GROUND {
+    background: linear-gradient(135deg, var(--type-ROCK) 50%, var(--type-GROUND) 50%);
+}
+.pokemon-card.bg-ROCK-FLYING {
+    background: linear-gradient(135deg, var(--type-ROCK) 50%, var(--type-FLYING) 50%);
+}
+.pokemon-card.bg-ROCK-PSYCHIC {
+    background: linear-gradient(135deg, var(--type-ROCK) 50%, var(--type-PSYCHIC) 50%);
+}
+.pokemon-card.bg-ROCK-BUG {
+    background: linear-gradient(135deg, var(--type-ROCK) 50%, var(--type-BUG) 50%);
+}
+.pokemon-card.bg-ROCK-GHOST {
+    background: linear-gradient(135deg, var(--type-ROCK) 50%, var(--type-GHOST) 50%);
+}
+.pokemon-card.bg-ROCK-DRAGON {
+    background: linear-gradient(135deg, var(--type-ROCK) 50%, var(--type-DRAGON) 50%);
+}
+.pokemon-card.bg-ROCK-DARK {
+    background: linear-gradient(135deg, var(--type-ROCK) 50%, var(--type-DARK) 50%);
+}
+.pokemon-card.bg-ROCK-STEEL {
+    background: linear-gradient(135deg, var(--type-ROCK) 50%, var(--type-STEEL) 50%);
+}
+.pokemon-card.bg-ROCK-FAIRY {
+    background: linear-gradient(135deg, var(--type-ROCK) 50%, var(--type-FAIRY) 50%);
+}
+.pokemon-card.bg-GHOST {
+    background-color: var(--type-GHOST);
+}
+.pokemon-card.bg-GHOST-NORMAL {
+    background: linear-gradient(135deg, var(--type-GHOST) 50%, var(--type-NORMAL) 50%);
+}
+.pokemon-card.bg-GHOST-FIRE {
+    background: linear-gradient(135deg, var(--type-GHOST) 50%, var(--type-FIRE) 50%);
+}
+.pokemon-card.bg-GHOST-WATER {
+    background: linear-gradient(135deg, var(--type-GHOST) 50%, var(--type-WATER) 50%);
+}
+.pokemon-card.bg-GHOST-ELECTRIC {
+    background: linear-gradient(135deg, var(--type-GHOST) 50%, var(--type-ELECTRIC) 50%);
+}
+.pokemon-card.bg-GHOST-GRASS {
+    background: linear-gradient(135deg, var(--type-GHOST) 50%, var(--type-GRASS) 50%);
+}
+.pokemon-card.bg-GHOST-ICE {
+    background: linear-gradient(135deg, var(--type-GHOST) 50%, var(--type-ICE) 50%);
+}
+.pokemon-card.bg-GHOST-FIGHTING {
+    background: linear-gradient(135deg, var(--type-GHOST) 50%, var(--type-FIGHTING) 50%);
+}
+.pokemon-card.bg-GHOST-POISON {
+    background: linear-gradient(135deg, var(--type-GHOST) 50%, var(--type-POISON) 50%);
+}
+.pokemon-card.bg-GHOST-GROUND {
+    background: linear-gradient(135deg, var(--type-GHOST) 50%, var(--type-GROUND) 50%);
+}
+.pokemon-card.bg-GHOST-FLYING {
+    background: linear-gradient(135deg, var(--type-GHOST) 50%, var(--type-FLYING) 50%);
+}
+.pokemon-card.bg-GHOST-PSYCHIC {
+    background: linear-gradient(135deg, var(--type-GHOST) 50%, var(--type-PSYCHIC) 50%);
+}
+.pokemon-card.bg-GHOST-BUG {
+    background: linear-gradient(135deg, var(--type-GHOST) 50%, var(--type-BUG) 50%);
+}
+.pokemon-card.bg-GHOST-ROCK {
+    background: linear-gradient(135deg, var(--type-GHOST) 50%, var(--type-ROCK) 50%);
+}
+.pokemon-card.bg-GHOST-DRAGON {
+    background: linear-gradient(135deg, var(--type-GHOST) 50%, var(--type-DRAGON) 50%);
+}
+.pokemon-card.bg-GHOST-DARK {
+    background: linear-gradient(135deg, var(--type-GHOST) 50%, var(--type-DARK) 50%);
+}
+.pokemon-card.bg-GHOST-STEEL {
+    background: linear-gradient(135deg, var(--type-GHOST) 50%, var(--type-STEEL) 50%);
+}
+.pokemon-card.bg-GHOST-FAIRY {
+    background: linear-gradient(135deg, var(--type-GHOST) 50%, var(--type-FAIRY) 50%);
+}
+.pokemon-card.bg-DRAGON {
+    background-color: var(--type-DRAGON);
+}
+.pokemon-card.bg-DRAGON-NORMAL {
+    background: linear-gradient(135deg, var(--type-DRAGON) 50%, var(--type-NORMAL) 50%);
+}
+.pokemon-card.bg-DRAGON-FIRE {
+    background: linear-gradient(135deg, var(--type-DRAGON) 50%, var(--type-FIRE) 50%);
+}
+.pokemon-card.bg-DRAGON-WATER {
+    background: linear-gradient(135deg, var(--type-DRAGON) 50%, var(--type-WATER) 50%);
+}
+.pokemon-card.bg-DRAGON-ELECTRIC {
+    background: linear-gradient(135deg, var(--type-DRAGON) 50%, var(--type-ELECTRIC) 50%);
+}
+.pokemon-card.bg-DRAGON-GRASS {
+    background: linear-gradient(135deg, var(--type-DRAGON) 50%, var(--type-GRASS) 50%);
+}
+.pokemon-card.bg-DRAGON-ICE {
+    background: linear-gradient(135deg, var(--type-DRAGON) 50%, var(--type-ICE) 50%);
+}
+.pokemon-card.bg-DRAGON-FIGHTING {
+    background: linear-gradient(135deg, var(--type-DRAGON) 50%, var(--type-FIGHTING) 50%);
+}
+.pokemon-card.bg-DRAGON-POISON {
+    background: linear-gradient(135deg, var(--type-DRAGON) 50%, var(--type-POISON) 50%);
+}
+.pokemon-card.bg-DRAGON-GROUND {
+    background: linear-gradient(135deg, var(--type-DRAGON) 50%, var(--type-GROUND) 50%);
+}
+.pokemon-card.bg-DRAGON-FLYING {
+    background: linear-gradient(135deg, var(--type-DRAGON) 50%, var(--type-FLYING) 50%);
+}
+.pokemon-card.bg-DRAGON-PSYCHIC {
+    background: linear-gradient(135deg, var(--type-DRAGON) 50%, var(--type-PSYCHIC) 50%);
+}
+.pokemon-card.bg-DRAGON-BUG {
+    background: linear-gradient(135deg, var(--type-DRAGON) 50%, var(--type-BUG) 50%);
+}
+.pokemon-card.bg-DRAGON-ROCK {
+    background: linear-gradient(135deg, var(--type-DRAGON) 50%, var(--type-ROCK) 50%);
+}
+.pokemon-card.bg-DRAGON-GHOST {
+    background: linear-gradient(135deg, var(--type-DRAGON) 50%, var(--type-GHOST) 50%);
+}
+.pokemon-card.bg-DRAGON-DARK {
+    background: linear-gradient(135deg, var(--type-DRAGON) 50%, var(--type-DARK) 50%);
+}
+.pokemon-card.bg-DRAGON-STEEL {
+    background: linear-gradient(135deg, var(--type-DRAGON) 50%, var(--type-STEEL) 50%);
+}
+.pokemon-card.bg-DRAGON-FAIRY {
+    background: linear-gradient(135deg, var(--type-DRAGON) 50%, var(--type-FAIRY) 50%);
+}
+.pokemon-card.bg-DARK {
+    background-color: var(--type-DARK);
+}
+.pokemon-card.bg-DARK-NORMAL {
+    background: linear-gradient(135deg, var(--type-DARK) 50%, var(--type-NORMAL) 50%);
+}
+.pokemon-card.bg-DARK-FIRE {
+    background: linear-gradient(135deg, var(--type-DARK) 50%, var(--type-FIRE) 50%);
+}
+.pokemon-card.bg-DARK-WATER {
+    background: linear-gradient(135deg, var(--type-DARK) 50%, var(--type-WATER) 50%);
+}
+.pokemon-card.bg-DARK-ELECTRIC {
+    background: linear-gradient(135deg, var(--type-DARK) 50%, var(--type-ELECTRIC) 50%);
+}
+.pokemon-card.bg-DARK-GRASS {
+    background: linear-gradient(135deg, var(--type-DARK) 50%, var(--type-GRASS) 50%);
+}
+.pokemon-card.bg-DARK-ICE {
+    background: linear-gradient(135deg, var(--type-DARK) 50%, var(--type-ICE) 50%);
+}
+.pokemon-card.bg-DARK-FIGHTING {
+    background: linear-gradient(135deg, var(--type-DARK) 50%, var(--type-FIGHTING) 50%);
+}
+.pokemon-card.bg-DARK-POISON {
+    background: linear-gradient(135deg, var(--type-DARK) 50%, var(--type-POISON) 50%);
+}
+.pokemon-card.bg-DARK-GROUND {
+    background: linear-gradient(135deg, var(--type-DARK) 50%, var(--type-GROUND) 50%);
+}
+.pokemon-card.bg-DARK-FLYING {
+    background: linear-gradient(135deg, var(--type-DARK) 50%, var(--type-FLYING) 50%);
+}
+.pokemon-card.bg-DARK-PSYCHIC {
+    background: linear-gradient(135deg, var(--type-DARK) 50%, var(--type-PSYCHIC) 50%);
+}
+.pokemon-card.bg-DARK-BUG {
+    background: linear-gradient(135deg, var(--type-DARK) 50%, var(--type-BUG) 50%);
+}
+.pokemon-card.bg-DARK-ROCK {
+    background: linear-gradient(135deg, var(--type-DARK) 50%, var(--type-ROCK) 50%);
+}
+.pokemon-card.bg-DARK-GHOST {
+    background: linear-gradient(135deg, var(--type-DARK) 50%, var(--type-GHOST) 50%);
+}
+.pokemon-card.bg-DARK-DRAGON {
+    background: linear-gradient(135deg, var(--type-DARK) 50%, var(--type-DRAGON) 50%);
+}
+.pokemon-card.bg-DARK-STEEL {
+    background: linear-gradient(135deg, var(--type-DARK) 50%, var(--type-STEEL) 50%);
+}
+.pokemon-card.bg-DARK-FAIRY {
+    background: linear-gradient(135deg, var(--type-DARK) 50%, var(--type-FAIRY) 50%);
+}
+.pokemon-card.bg-STEEL {
+    background-color: var(--type-STEEL);
+}
+.pokemon-card.bg-STEEL-NORMAL {
+    background: linear-gradient(135deg, var(--type-STEEL) 50%, var(--type-NORMAL) 50%);
+}
+.pokemon-card.bg-STEEL-FIRE {
+    background: linear-gradient(135deg, var(--type-STEEL) 50%, var(--type-FIRE) 50%);
+}
+.pokemon-card.bg-STEEL-WATER {
+    background: linear-gradient(135deg, var(--type-STEEL) 50%, var(--type-WATER) 50%);
+}
+.pokemon-card.bg-STEEL-ELECTRIC {
+    background: linear-gradient(135deg, var(--type-STEEL) 50%, var(--type-ELECTRIC) 50%);
+}
+.pokemon-card.bg-STEEL-GRASS {
+    background: linear-gradient(135deg, var(--type-STEEL) 50%, var(--type-GRASS) 50%);
+}
+.pokemon-card.bg-STEEL-ICE {
+    background: linear-gradient(135deg, var(--type-STEEL) 50%, var(--type-ICE) 50%);
+}
+.pokemon-card.bg-STEEL-FIGHTING {
+    background: linear-gradient(135deg, var(--type-STEEL) 50%, var(--type-FIGHTING) 50%);
+}
+.pokemon-card.bg-STEEL-POISON {
+    background: linear-gradient(135deg, var(--type-STEEL) 50%, var(--type-POISON) 50%);
+}
+.pokemon-card.bg-STEEL-GROUND {
+    background: linear-gradient(135deg, var(--type-STEEL) 50%, var(--type-GROUND) 50%);
+}
+.pokemon-card.bg-STEEL-FLYING {
+    background: linear-gradient(135deg, var(--type-STEEL) 50%, var(--type-FLYING) 50%);
+}
+.pokemon-card.bg-STEEL-PSYCHIC {
+    background: linear-gradient(135deg, var(--type-STEEL) 50%, var(--type-PSYCHIC) 50%);
+}
+.pokemon-card.bg-STEEL-BUG {
+    background: linear-gradient(135deg, var(--type-STEEL) 50%, var(--type-BUG) 50%);
+}
+.pokemon-card.bg-STEEL-ROCK {
+    background: linear-gradient(135deg, var(--type-STEEL) 50%, var(--type-ROCK) 50%);
+}
+.pokemon-card.bg-STEEL-GHOST {
+    background: linear-gradient(135deg, var(--type-STEEL) 50%, var(--type-GHOST) 50%);
+}
+.pokemon-card.bg-STEEL-DRAGON {
+    background: linear-gradient(135deg, var(--type-STEEL) 50%, var(--type-DRAGON) 50%);
+}
+.pokemon-card.bg-STEEL-DARK {
+    background: linear-gradient(135deg, var(--type-STEEL) 50%, var(--type-DARK) 50%);
+}
+.pokemon-card.bg-STEEL-FAIRY {
+    background: linear-gradient(135deg, var(--type-STEEL) 50%, var(--type-FAIRY) 50%);
+}
+.pokemon-card.bg-FAIRY {
+    background-color: var(--type-FAIRY);
+}
+.pokemon-card.bg-FAIRY-NORMAL {
+    background: linear-gradient(135deg, var(--type-FAIRY) 50%, var(--type-NORMAL) 50%);
+}
+.pokemon-card.bg-FAIRY-FIRE {
+    background: linear-gradient(135deg, var(--type-FAIRY) 50%, var(--type-FIRE) 50%);
+}
+.pokemon-card.bg-FAIRY-WATER {
+    background: linear-gradient(135deg, var(--type-FAIRY) 50%, var(--type-WATER) 50%);
+}
+.pokemon-card.bg-FAIRY-ELECTRIC {
+    background: linear-gradient(135deg, var(--type-FAIRY) 50%, var(--type-ELECTRIC) 50%);
+}
+.pokemon-card.bg-FAIRY-GRASS {
+    background: linear-gradient(135deg, var(--type-FAIRY) 50%, var(--type-GRASS) 50%);
+}
+.pokemon-card.bg-FAIRY-ICE {
+    background: linear-gradient(135deg, var(--type-FAIRY) 50%, var(--type-ICE) 50%);
+}
+.pokemon-card.bg-FAIRY-FIGHTING {
+    background: linear-gradient(135deg, var(--type-FAIRY) 50%, var(--type-FIGHTING) 50%);
+}
+.pokemon-card.bg-FAIRY-POISON {
+    background: linear-gradient(135deg, var(--type-FAIRY) 50%, var(--type-POISON) 50%);
+}
+.pokemon-card.bg-FAIRY-GROUND {
+    background: linear-gradient(135deg, var(--type-FAIRY) 50%, var(--type-GROUND) 50%);
+}
+.pokemon-card.bg-FAIRY-FLYING {
+    background: linear-gradient(135deg, var(--type-FAIRY) 50%, var(--type-FLYING) 50%);
+}
+.pokemon-card.bg-FAIRY-PSYCHIC {
+    background: linear-gradient(135deg, var(--type-FAIRY) 50%, var(--type-PSYCHIC) 50%);
+}
+.pokemon-card.bg-FAIRY-BUG {
+    background: linear-gradient(135deg, var(--type-FAIRY) 50%, var(--type-BUG) 50%);
+}
+.pokemon-card.bg-FAIRY-ROCK {
+    background: linear-gradient(135deg, var(--type-FAIRY) 50%, var(--type-ROCK) 50%);
+}
+.pokemon-card.bg-FAIRY-GHOST {
+    background: linear-gradient(135deg, var(--type-FAIRY) 50%, var(--type-GHOST) 50%);
+}
+.pokemon-card.bg-FAIRY-DRAGON {
+    background: linear-gradient(135deg, var(--type-FAIRY) 50%, var(--type-DRAGON) 50%);
+}
+.pokemon-card.bg-FAIRY-DARK {
+    background: linear-gradient(135deg, var(--type-FAIRY) 50%, var(--type-DARK) 50%);
+}
+.pokemon-card.bg-FAIRY-STEEL {
+    background: linear-gradient(135deg, var(--type-FAIRY) 50%, var(--type-STEEL) 50%);
 }

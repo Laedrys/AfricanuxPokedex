@@ -5,26 +5,42 @@
     <title>Africanus Pokédex</title>
     <link rel="stylesheet" href="/static/style.css">
     <style>
-        #suggestions {
-            background-color: white;
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .pokemon-card {
             border: 1px solid #ccc;
-            border-top: none;
-            max-height: 150px;
-            overflow-y: auto;
-            position: absolute;
-            width: 70%;
-            z-index: 10;
+            border-radius: 8px;
+            padding: 12px;
+            margin: 10px 0;
+            background: #f9f9f9;
         }
-        #suggestions div {
-            padding: 8px;
-            cursor: pointer;
+        .type-box {
+            padding: 4px 8px;
+            border-radius: 4px;
+            color: white;
+            font-weight: bold;
+            display: inline-block;
+            margin-right: 5px;
         }
-        #suggestions div:hover {
-            background-color: #eee;
-        }
-        .autocomplete-wrapper {
-            position: relative;
-        }
+        .type-POISON { background-color: #A040A0; }
+        .type-GRASS { background-color: #78C850; }
+        .type-FIRE { background-color: #F08030; }
+        .type-WATER { background-color: #6890F0; }
+        .type-BUG { background-color: #A8B820; }
+        .type-NORMAL { background-color: #A8A878; }
+        .type-ELECTRIC { background-color: #F8D030; }
+        .type-GROUND { background-color: #E0C068; }
+        .type-FAIRY { background-color: #EE99AC; }
+        .type-PSYCHIC { background-color: #F85888; }
+        .type-FIGHTING { background-color: #C03028; }
+        .type-ROCK { background-color: #B8A038; }
+        .type-GHOST { background-color: #705898; }
+        .type-ICE { background-color: #98D8D8; }
+        .type-DRAGON { background-color: #7038F8; }
+        .type-FLYING { background-color: #A890F0; }
+        .type-STEEL { background-color: #B8B8D0; }
+        .type-DARK { background-color: #705848; }
     </style>
 </head>
 <body>
@@ -55,26 +71,49 @@
             </div>
         </form>
 
-        {% if pokemon %}
-        <div class="pokemon-info">
-            <h2>{{ pokemon.Name }} ({{ pokemon.Number }})</h2>
-            <p><strong>Type :</strong> {{ pokemon.Type1 }}{% if pokemon.Type2 %} / {{ pokemon.Type2 }}{% endif %}</p>
-            <p><strong>Abilities :</strong> {{ pokemon.Ability1 }}{% if pokemon.Ability2 %}, {{ pokemon.Ability2 }}{% endif %}</p>
-            {% if pokemon.HiddenAbility %}
-            <p><strong>Hidden Ability :</strong> {{ pokemon.HiddenAbility }}</p>
-            {% endif %}
-            <p><strong>Base Stats :</strong> {{ pokemon.BaseStats }}</p>
-            {% if pokemon.Moves %}
-            <p><strong>Moves :</strong>
-                {% set moves = pokemon.Moves.split(',') %}
-                {% for i in range(0, moves|length, 2) %}
-                    {{ moves[i] }} : {{ moves[i+1] }}{% if not loop.last %} | {% endif %}
-                {% endfor %}
-            </p>
-            {% endif %}
-        </div>
+        {% if result_list %}
+            {% for p in result_list %}
+            <div class="pokemon-card">
+                <h2>#{{ "%03d"|format(p['Number']|int) }} - {{ p['Name'] }}</h2>
+                <div>
+                    {% if p.Type1 %}
+                    <span class="type-box type-{{ p.Type1|upper }}">{{ p.Type1 }}</span>
+                    {% endif %}
+                    {% if p.Type2 %}
+                    <span class="type-box type-{{ p.Type2|upper }}">{{ p.Type2 }}</span>
+                    {% endif %}
+                </div>
+                <p><strong>Abilities :</strong> {{ p.Ability1 }}{% if p.Ability2 %}, {{ p.Ability2 }}{% endif %}</p>
+                {% if p.HiddenAbility %}
+                <p><strong>Hidden Ability :</strong> {{ p.HiddenAbility }}</p>
+                {% endif %}
+                {% if p.BaseStats %}
+{% set stats = p.BaseStats.split(',') %}
+<p><strong>Statistiques de base :</strong><br>
+HP : {{ stats[0] }}<br>
+Atk : {{ stats[1] }}<br>
+Def : {{ stats[2] }}<br>
+Spe : {{ stats[3] }}<br>
+SpA : {{ stats[4] }}<br>
+SpD : {{ stats[5] }}
+</p>
+{% endif %}
+                {% if p.Moves %}
+                    <p><strong>Moves :</strong>
+                        {% set moves = p.Moves.split(',') %}
+                        {% for i in range(0, moves|length, 2) %}
+                            {{ moves[i] }} : {{ moves[i+1] }}{% if not loop.last %} | {% endif %}
+                        {% endfor %}
+                    </p>
+                {% endif %}
+{% if p.Evolutions %}
+<p><strong>Évolution(s) :</strong> {{ p.Evolutions }}</p>
+{% endif %}
+
+            </div>
+            {% endfor %}
         {% elif query %}
-        <p>Aucun Pokémon trouvé avec ce nom.</p>
+            <p>Aucun Pokémon trouvé avec ce nom.</p>
         {% endif %}
     </div>
 

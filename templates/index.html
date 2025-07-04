@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Africanus Pokédex</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Africanus Pokédex</h1>
+        <form method="post">
+            <input type="text" name="query" placeholder="Entrez un nom de Pokémon" value="{{ query }}">
+            <button type="submit">Rechercher</button>
+        </form>
+
+        {% if pokemon %}
+        <div class="pokemon-info">
+            <h2>{{ pokemon.Name }} ({{ pokemon.Number }})</h2>
+            <p><strong>Type :</strong> {{ pokemon.Type1 }}{% if pokemon.Type2 %} / {{ pokemon.Type2 }}{% endif %}</p>
+            <p><strong>Abilities :</strong> {{ pokemon.Ability1 }}{% if pokemon.Ability2 %}, {{ pokemon.Ability2 }}{% endif %}</p>
+            {% if pokemon.HiddenAbility %}
+            <p><strong>Hidden Ability :</strong> {{ pokemon.HiddenAbility }}</p>
+            {% endif %}
+            <p><strong>Base Stats :</strong> {{ pokemon.BaseStats }}</p>
+            {% if pokemon.Moves %}
+            <p><strong>Moves :</strong>
+                {% set moves = pokemon.Moves.split(',') %}
+                {% for i in range(0, moves|length, 2) %}
+                    {{ moves[i] }} : {{ moves[i+1] }}{% if not loop.last %} | {% endif %}
+                {% endfor %}
+            </p>
+            {% endif %}
+        </div>
+        {% elif query %}
+        <p>Aucun Pokémon trouvé avec ce nom.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

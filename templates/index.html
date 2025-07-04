@@ -4,13 +4,55 @@
     <meta charset="UTF-8">
     <title>Africanus Pokédex</title>
     <link rel="stylesheet" href="/static/style.css">
+    <style>
+        #suggestions {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-top: none;
+            max-height: 150px;
+            overflow-y: auto;
+            position: absolute;
+            width: 70%;
+            z-index: 10;
+        }
+        #suggestions div {
+            padding: 8px;
+            cursor: pointer;
+        }
+        #suggestions div:hover {
+            background-color: #eee;
+        }
+        .autocomplete-wrapper {
+            position: relative;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <h1>Africanus Pokédex</h1>
-        <form method="post">
-            <input type="text" name="query" placeholder="Entrez un nom de Pokémon" value="{{ query }}">
-            <button type="submit">Rechercher</button>
+        <form method="post" autocomplete="off">
+            <div class="autocomplete-wrapper">
+                <input type="text" id="search-box" name="query" placeholder="Entrez un nom de Pokémon" value="{{ query }}">
+                <div id="suggestions"></div>
+            </div>
+
+            <div style="margin-top: 10px;">
+                <label for="sort">Trier par :</label>
+                <select name="sort" id="sort">
+                    <option value="number" {% if sort_by == 'number' %}selected{% endif %}>Numéro</option>
+                    <option value="name" {% if sort_by == 'name' %}selected{% endif %}>Nom</option>
+                </select>
+
+                <label for="type">Filtrer par type :</label>
+                <select name="type_filter" id="type">
+                    <option value="">Tous</option>
+                    {% for t in types %}
+                        <option value="{{ t }}" {% if type_filter == t %}selected{% endif %}>{{ t }}</option>
+                    {% endfor %}
+                </select>
+
+                <button type="submit">Rechercher</button>
+            </div>
         </form>
 
         {% if pokemon %}
@@ -35,5 +77,38 @@
         <p>Aucun Pokémon trouvé avec ce nom.</p>
         {% endif %}
     </div>
+
+    <script>
+        const searchBox = document.getElementById('search-box');
+        const suggestionsBox = document.getElementById('suggestions');
+
+        searchBox.addEventListener('input', async () => {
+            const query = searchBox.value.trim();
+            if (query.length === 0) {
+                suggestionsBox.innerHTML = "";
+                return;
+            }
+
+            const response = await fetch(`/autocomplete?query=${encodeURIComponent(query)}`);
+            const suggestions = await response.json();
+
+            suggestionsBox.innerHTML = "";
+            suggestions.forEach(name => {
+                const div = document.createElement('div');
+                div.textContent = name;
+                div.onclick = () => {
+                    searchBox.value = name;
+                    suggestionsBox.innerHTML = "";
+                };
+                suggestionsBox.appendChild(div);
+            });
+        });
+
+        document.addEventListener('click', function (e) {
+            if (!e.target.closest('.autocomplete-wrapper')) {
+                suggestionsBox.innerHTML = "";
+            }
+        });
+    </script>
 </body>
 </html>
